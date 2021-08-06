@@ -1,0 +1,44 @@
+﻿@model IEnumerable<CarSales.Models.Car>
+
+@{ ViewData["Title"] = "Cars"; }
+
+@{ Layout = "_LayoutAdmin"; }
+<p>
+    <a asp-action="Create" type="button" class="btn btn-secondary">Add New Car</a>
+</p>
+<table class="table table-dark table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CarName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CarModel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Price)
+    </td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-secondary">Edit</a>
+        <a asp-action="Details" asp-route-id="@item.Id" type="button" class="btn btn-secondary">Details</a>
+        <a asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-secondary">Delete</a>
+    </td>
+</tr>}
+    </tbody>
+</table>

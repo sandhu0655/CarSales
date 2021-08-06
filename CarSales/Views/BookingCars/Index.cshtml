@@ -1,0 +1,48 @@
+﻿@model IEnumerable<CarSales.Models.BookingCars>
+
+
+@{ ViewData["Title"] = "Index"; }
+@{ Layout = "_LayoutAdmin"; }
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookingDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.id" type="button" class="btn btn-info">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.id" type="button" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.id" type="button" class="btn btn-info">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

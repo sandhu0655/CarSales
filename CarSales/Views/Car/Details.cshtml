@@ -1,0 +1,42 @@
+﻿@model CarSales.Models.Car
+
+@{ ViewData["Title"] = "Details"; }
+@{ Layout = "_LayoutAdmin"; }
+<br />
+
+<div>
+    <h4>Details of Car</h4>
+    <hr />
+    <table class="table table-dark table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CarName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CarModel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.CarName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.CarModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Price)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" type="button" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" type="button" class="btn btn-warning">Back to List</a>
+</div>

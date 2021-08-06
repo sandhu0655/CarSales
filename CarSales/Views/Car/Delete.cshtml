@@ -1,0 +1,44 @@
+﻿@model CarSales.Models.Car
+
+@{ ViewData["Title"] = "Delete"; }
+@{ Layout = "_LayoutAdmin"; }
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Delete Car</h4>
+    <hr />
+    <table class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CarName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CarModel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.CarName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.CarModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Price)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index" type="button" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>

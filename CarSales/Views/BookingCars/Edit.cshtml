@@ -1,0 +1,40 @@
+﻿@model CarSales.Models.BookingCars
+
+
+@{ ViewData["Title"] = "Edit"; }
+@{ Layout = "_LayoutAdmin"; }
+<h4>Edit BookingCars</h4>
+<hr />
+<div class="row">
+    <div class="col-md-9 font-weight-bold">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for=" id" />
+            <div class="form-group">
+                <label asp-for=" Name" class="control-label"></label>
+                <input asp-for=" Name" class="form-control" />
+                <span asp-validation-for=" Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for=" Contact" class="control-label"></label>
+                <input asp-for=" Contact" class="form-control" />
+                <span asp-validation-for=" Contact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for=" CarModel" class="control-label"></label>
+                <input asp-for=" CarModel" class="form-control" />
+                <span asp-validation-for=" CarModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for=" BookingDate" class="control-label"></label>
+                <input asp-for=" BookingDate" class="form-control" />
+                <span asp-validation-for=" BookingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" type="button" class="btn btn-info">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
